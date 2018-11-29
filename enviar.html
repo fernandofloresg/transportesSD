@@ -20,8 +20,19 @@
       <center><h1>Mensajes</h1></center><br>
     <!--<div id="absolut" style="position:absolute">-->
       <form>
-        Mensaje:<br>
-        <input type="text" name="Mensaje"><br>
+        <div class="container">
+          <label for="examleMsg">Mensaje</label>
+          <div class="row">
+            <div class="col-sm">
+              <div class="form-group">  
+                <input type="msg" class="form-control" id="exampleInputMsg" aria-describedby="msgHelp" placeholder="Enter Msg">
+                </div>
+              </div>
+            <div class="col-sm">
+              <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
+            </div>
+          </div>
+        </div>
       </form>
     </div>
   </body>
