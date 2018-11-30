@@ -16,7 +16,7 @@ function consultaMensajes() {
 function onMensajesResponse(response) {
   mensajes = response
   var mensajes_conversacion = filtraMensajes()
-  $('#contenedor-mensajes', window.parent.frames[1]).empty()
+  $('#contenedor-mensajes').empty()
   llenaMensajes(mensajes_conversacion)
 }
 
@@ -49,7 +49,7 @@ function llenaMensajes(mensajes_conversacion) {
     } else {
       chat_bubble = '<div class="row"><div class="col"></div> <div class="col"><div class="alert alert-primary">' +mensaje.mensaje + '</div></div></div>'
     }
-    $('#contenedor-mensajes', window.parent.frames[1]).append(chat_bubble)
+    $('#contenedor-mensajes').append(chat_bubble)
   }
 }
 
@@ -61,8 +61,7 @@ function filtraMensajes() {
 
 consultaMensajes()
 $(document).ready(function () {
-    $( "#mensaje-form", window.parent.frames[2] ).submit(function( event ) {
+    $( "#mensaje-form").submit(function( event ) {
       mandaMensaje()
-      event.preventDefault()
   });
 });

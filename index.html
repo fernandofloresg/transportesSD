@@ -14,46 +14,82 @@
       }
     </style>
   </head>
-  <frameset cols=20%,80% border=1>
-    <frame src="usuarios.html">
-    <frameset rows="80%,20%" border=1>
-      <frame src="mensaje.html">
-      <frame src="enviar.html">
-    </frameset>
-  </frameset>
-    <body>
-    <!--
-    <div class="">
-      <h1>Transportes SD</h1><br>
-      Ejemplo de como se deben de ver los mensajes
-
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="alert alert-primary">Hola</div>
-          </div>
-          <div class="col"></div>
-        </div>
+  <body>
+    <div class="row">
+      <div class="col-md-4">
+        <form>
+  				<div class="container">
+  				<label for="exampleInputUser">Usuario emisor</label>
+  					<div class="row">
+  						<div class="col-sm">
+  							<div class="form-group">
+  								<input type="user" class="form-control" id="exampleInputUser" aria-describedby="userHelp" placeholder="Ingresa usuario emisor">
+  					    	</div>
+  					    </div>
+  						<div class="col-sm">
+  							<button type="submit" class="btn btn-primary btn-sm">Actualizar</button>
+  						</div>
+  					</div>
+  					<label for="title">Usuario receptor</label>
+  					<div class="row">
+  						<div class="col-sm">
+  							<div class="form-group">
+  								<input type="user" class="form-control" id="exampleInputUser" aria-describedby="userHelp" placeholder="Ingresa usuario receptor">
+  					    	</div>
+  					    </div>
+  						<div class="col-sm">
+  							<button type="submit" class="btn btn-primary btn-sm">Actualizar</button>
+  						</div>
+  					</div>
+  				</div>
+  			</form>
       </div>
-      <div class="container">
+      <div class="col-md-8">
         <div class="row">
-          <div class="col"></div>
-          <div class="col">
-            <div class="alert alert-secondary">Hola fernando, que paso?</div>
+          <div class="">
+            <center><h1>Transportes SD</h1></center><br>
+            <!--Ejemplo de como se deben de ver los mensajes-->
+            <div id="contenedor-mensajes" class="container">
+              <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                  <div class="alert alert-secondary">Hola fernando, que paso?</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="alert alert-primary">Hola</div>
+                </div>
+                <div class="col"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Input de los mensajes-->
+          <div class="">
+          <br>
+          <!--<div id="absolut" style="position:absolute">-->
+            <form id="mensaje-form">
+              <div class="container">
+                <label for="examleMsg">Mensaje</label>
+                <div class="row">
+                  <div class="col-sm">
+                    <div class="form-group">
+                      <input type="msg" class="form-control" id="mensaje-input" aria-describedby="msgHelp" placeholder="Ingresa mensaje">
+                      </div>
+                    </div>
+                  <div class="col-sm">
+                    <button id="boton-enviar" type="submit" class="btn btn-primary btn-sm">Enviar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
 
-    Input de los mensajes
-
-    <div id="absolut" style="position:absolute">
-      <form>
-        Mensaje:<br>
-        <input type="text" name="Mensaje"><br>
-      </form>
-    </div>
-  -->
   </body>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="./jquery-3.3.1.min.js"></script>
