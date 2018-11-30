@@ -36,7 +36,6 @@ function mandaMensaje() {
     }
     url = 'https://transportacionessdi.herokuapp.com/mensajes'
     $.post(url, objeto_mensaje, function(data, status) {
-      consultaMensajes()
     })
   }
 }
@@ -55,13 +54,42 @@ function llenaMensajes(mensajes_conversacion) {
 
 function filtraMensajes() {
   var mensajes_filtrados = []
-  mensajes_filtrados = mensajes.filter(mensaje => (mensaje.receptor === usuario_destino && mensaje.emisor === usuario_actual) || (mensaje.emisor === usuario_actual && mensaje.emisor === usuario_destino))
+  mensajes_filtrados = mensajes.filter(mensaje => (mensaje.receptor === usuario_destino && mensaje.emisor === usuario_actual) || (mensaje.receptor === usuario_actual && mensaje.emisor === usuario_destino))
   return mensajes_filtrados
 }
 
-consultaMensajes()
+function actualizarNombres() {
+  $('#actual').text(usuario_actual)
+  $('#destino').text(usuario_destino)
+}
+
+
 $(document).ready(function () {
-    $( "#mensaje-form").submit(function( event ) {
-      mandaMensaje()
-  });
+  $( "#mensaje-form").submit(function( event ) {
+    mandaMensaje()
+    $('#mensaje-input').val('')
+    event.preventDefault()
+  })
+  $("#actual-form").submit(function (event) {
+    usuario_actual = $('#actual-input').val()
+    consultaMensajes()
+    actualizarNombres()
+    event.preventDefault()
+    $('#actual-input').val('')
+  })
+  $("#destino-form").submit(function(event) {
+    usuario_destino = $('#destino-input').val()
+    consultaMensajes()
+    actualizarNombres()
+    event.preventDefault()
+    $('#destino-input').val('')
+  })
+  actualizarNombres()
 });
+
+window.setInterval(function(){
+  w = new Worker('obtener_mensajes.js')
+  w.onmessage = function(event){
+    onMensajesResponse(event.data)
+  }
+}, 1000);
