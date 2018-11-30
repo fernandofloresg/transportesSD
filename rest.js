@@ -16,7 +16,7 @@ function consultaMensajes() {
 function onMensajesResponse(response) {
   mensajes = response
   var mensajes_conversacion = filtraMensajes()
-  $('#contenedor-mensajes').empty()
+  $('#contenedor-mensajes', window.parent.frames[1]).empty()
   llenaMensajes(mensajes_conversacion)
 }
 
@@ -26,7 +26,6 @@ var usuario_destino = 'francisco'
 
 function mandaMensaje() {
   let mensaje = $('#mensaje-input').val()
-  console.log(mensaje)
   if(mensaje != '' && mensaje != undefined) {
     objeto_mensaje = {
       id_folio : "20161003",
@@ -50,7 +49,7 @@ function llenaMensajes(mensajes_conversacion) {
     } else {
       chat_bubble = '<div class="row"><div class="col"></div> <div class="col"><div class="alert alert-primary">' +mensaje.mensaje + '</div></div></div>'
     }
-    $('#contenedor-mensajes').append(chat_bubble)
+    $('#contenedor-mensajes', window.parent.frames[1]).append(chat_bubble)
   }
 }
 
@@ -62,5 +61,8 @@ function filtraMensajes() {
 
 consultaMensajes()
 $(document).ready(function () {
-  $('#boton-enviar').click(mandaMensaje())
-})
+    $( "#mensaje-form", window.parent.frames[2] ).submit(function( event ) {
+      mandaMensaje()
+      event.preventDefault()
+  });
+});
