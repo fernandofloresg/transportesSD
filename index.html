@@ -5,20 +5,37 @@
     <title>Transporters SD</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style>
-      #absolut{
-        position:absolute;
-        top:500px;
-        left:200px;
-        width: 300px;
-        height: 100px;
+      .encabezado{
+        height:32px;
+        margin-bottom: 40px;
+        width:693px;
       }
+      .center{
+        margin: auto;
+        width: 80%;
+        border: 1px solid #73AD21;
+        padding: 10px;
+        background-color: #F78181;
+      }
+      .users{
+        background-color:#EFFBF2;
+      }
+      .msg{
+        background-color:#FBEFF5;
+      }
+      .msgSemd{
+        background-color:#F7F8E0;
+      }
+
     </style>
+
   </head>
   <body>
-    <div class="row">
+    <div class="encabezado"></div>
+    <div class="row center">
       <div class="col-md-4">
         <form>
-  				<div class="container">
+  				<div class="container users">
   				<label for="exampleInputUser">Usuario emisor</label>
   					<div class="row">
   						<div class="col-sm">
@@ -45,11 +62,11 @@
   			</form>
       </div>
       <div class="col-md-8">
-        <div class="row">
+        <div class="row msg">
           <div class="">
             <center><h1>Transportes SD</h1></center><br>
             <!--Ejemplo de como se deben de ver los mensajes-->
-            <div id="contenedor-mensajes" class="container">
+            <div id="contenedor-mensajes" class="container ">
               <div class="row">
                 <div class="col"></div>
                 <div class="col">
@@ -65,7 +82,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row msgSemd">
           <!-- Input de los mensajes-->
           <div class="">
           <br>
